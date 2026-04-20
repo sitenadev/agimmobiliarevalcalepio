@@ -1,0 +1,15 @@
+{
+  "aria": {},
+  "menu": {
+    "home": {
+      "items": [
+        { "label": "Inizio", "href": "hero", "target": "section" },
+        { "label": "Immobili", "href": "properties", "target": "section" },
+        { "label": "Chi Siamo", "href": "about", "target": "section" },
+        { "label": "Servizi", "href": "services", "target": "section" },
+        { "label": "Contatti", "href": "contact", "target": "section" },
+      ]
+    },
+    "main": {}
+  }
+}

@@ -1,0 +1,102 @@
+{%- if site.data.navigation and page.navbar.variant == 'custom' -%}
+  {%- assign menu_key = page.navbar.menu | default: 'home' -%}
+  {%- assign nav_items = site.data.navigation.menu[menu_key].items -%}
+  <nav id="navbar-custom" class="navbar navbar-expand-lg navbar-light py-3">
+    <div class="container">
+      <a class="navbar-brand" href="{{ site.url }}">
+        <img class="img-fluid" width="400" height="60" src="{{ '/assets/img/logo-dark.svg' | relative_url }}" alt="{{ site.data.meta.title }}">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-custom-menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbar-custom-menu" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+        {%- for anchor in nav_items -%}
+        {%- unless anchor.items or anchor.target != 'section' %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '#' | append: anchor.href | relative_url }}">{{ anchor.label }}</a>
+          </li>
+        {%- endunless -%}
+        {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+{%- endif -%}
+{%- if site.data.navigation and page.navbar.variant == 'theme' -%}
+  {%- assign menu_key = page.navbar.menu | default: 'main' -%}
+  {%- assign nav_items = site.data.navigation.menu[menu_key].items -%}
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+  <nav id="navbar-theme" class="site-nav">
+    <div class="container">
+      <div class="menu-bg-wrap">
+        <div class="site-navigation">
+          <a href="{{ site.url }}" class="logo m-0 float-start">
+            <img class="img-fluid" width="400" height="60" src="{{ '/assets/img/logo-light.svg' | relative_url }}" alt="{{ site.data.meta.title }}">
+          </a>
+          <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+          {%- for item in nav_items -%}
+            {%- unless item.target == 'section' -%}
+            {%- assign lhref = item.href -%}{%- assign ltarget = '' -%}{%- assign lclass = '' -%}
+            {%- if item.target == 'internal' -%}{%- assign lhref = item.href | relative_url -%}{%- if page.url contains item.href -%}{%- assign lclass = 'active' -%}{%- endif -%}
+            {%- elsif item.target == 'external' -%}{%- assign ltarget = ' target="_blank" rel="noopener"' -%}
+            {%- endif -%}
+            {%- if item.items %}
+            <li class="{{ lclass | prepend: ' ' | prepend: 'has-children' | strip }}">
+              <a href="{{ lhref }}"{{ ltarget }}>{{ item.label }}</a>
+              <ul class="dropdown">
+              {%- for child in item.items -%}
+                {%- unless child.target == 'section' -%}
+                {%- assign lhref = child.href -%}{%- assign ltarget = '' -%}{%- assign lclass = '' -%}
+                {%- if child.target == 'internal' -%}{%- assign lhref = child.href | relative_url -%}{%- if page.url contains child.href -%}{%- assign lclass = 'active' -%}{%- endif -%}
+                {%- elsif child.target == 'external' -%}{%- assign ltarget = ' target="_blank" rel="noopener"' -%}
+                {%- endif -%}
+                {%- if child.items %}
+                <li class="{{ lclass | prepend: ' ' | prepend: 'has-children' | strip }}">
+                  <a href="{{ lhref }}"{{ ltarget }}>{{ child.label }}</a>
+                  <ul class="dropdown">
+                  {%- for grandchild in child.items -%}
+                    {%- unless grandchild.target == 'section' -%}
+                    {%- assign lhref = grandchild.href -%}{%- assign ltarget = '' -%}{%- assign lclass = '' -%}
+                    {%- if grandchild.target == 'internal' -%}{%- assign lhref = grandchild.href | relative_url -%}{%- if page.url contains grandchild.href -%}{%- assign lclass = 'active' -%}{%- endif -%}
+                    {%- elsif grandchild.target == 'external' -%}{%- assign ltarget = ' target="_blank" rel="noopener"' -%}
+                    {%- endif %}
+                    <li{% if lclass != '' %} class="{{ lclass }}"{% endif %}>
+                      <a href="{{ lhref }}"{{ ltarget }}>{{ grandchild.label }}</a>
+                    </li>
+                    {%- endunless %}
+                  {%- endfor %}
+                  </ul>
+                </li>
+                {%- else %}
+                <li{% if lclass != '' %} class="{{ lclass }}"{% endif %}>
+                  <a href="{{ lhref }}"{{ ltarget }}>{{ child.label }}</a>
+                </li>
+                {%- endif -%}
+                {%- endunless -%}
+              {%- endfor %}
+              </ul>
+            </li>
+            {%- else %}
+            <li{% if lclass != '' %} class="{{ lclass }}"{% endif %}>
+              <a href="{{ lhref }}"{{ ltarget }}>{{ item.label }}</a>
+            </li>
+            {%- endif -%}
+            {%- endunless -%}
+          {%- endfor %}
+          </ul>
+          <a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#navbar-theme">
+            <span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+{%- endif -%}

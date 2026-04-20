@@ -1,0 +1,96 @@
+{%- if site.data.footer -%}
+  <div id="contact">
+    <div class="section">
+      <div class="row justify-content-center footer-cta" data-aos="fade-up">
+        <div class="col-lg-7 mx-auto text-center">
+          <h2 class="mb-4">{{ site.data.cta.title }}</h2>
+          <p class="lead">{{ site.data.cta.copy }}</p>
+          <p>
+            <a class="btn btn-primary text-white py-3 px-4" href="{{ 'tel:' | append: site.data.cta.action.href }}" target="_blank">
+              <span class="icon-phone me-2"></span>
+              {{ site.data.cta.action.label }}
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="m-0 p-0">
+      <div id="map" data-title="{{ site.data.meta.title | escape }}" data-google-link="{{ site.data.footer.network.sites.google.link }}"></div>
+    </div>
+    <footer class="site-footer text-black-50">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="widget">
+              <h3>{{ site.data.footer.contact.title }}</h3>
+              <address>{{ site.data.footer.contact.address }}</address>
+              <ul class="list-unstyled links">
+                <li><a href="{{ 'tel:' | append: site.data.footer.contact.phone.land }}">{{ site.data.footer.contact.phone.land }}</a></li>
+                <li><a href="{{ 'tel:' | append: site.data.footer.contact.phone.mobile }}">{{ site.data.footer.contact.phone.mobile }}</a></li>
+                <li><a href="{{ 'mailto:' | append: site.data.footer.contact.email }}">{{ site.data.footer.contact.email }}</a></li>
+                <li><a href="{{ 'mailto:' | append: site.data.footer.contact.pec }}">{{ site.data.footer.contact.pec }}</a></li>
+              </ul>
+              {%- for opening in site.data.footer.contact.openings %}
+              <p class="m-0">{{ opening }}</p>
+              {%- endfor %}
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="widget">
+              <h3>{{ site.data.footer.coverage.title }}</h3>
+              {% assign towns = site.data.footer.coverage.towns -%}
+              {%- assign total = towns | size -%}
+              {%- assign half = total | plus: 1 | divided_by: 2 -%}
+              <ul class="list-unstyled float-start links">
+              {%- for town in towns limit: half %}
+                <li>{{ town }}</li>
+              {%- endfor %}
+              </ul>
+              <ul class="list-unstyled float-start links">
+              {%- for town in towns offset: half %}
+                <li>{{ town }}</li>
+              {%- endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="widget">
+              <h3>{{ site.data.footer.network.title }}</h3>
+              <ul class="list-unstyled links">
+              {%- assign ordered_links = 'website,mlsagentre' | split: ',' -%}
+              {%- for key in ordered_links %}
+                {% assign site_item = site.data.footer.network.sites[key] -%}
+                <li>
+                  <a href="{{ site_item.link }}" target="_blank" rel="noopener">{{ site_item.name }}</a>
+                </li>
+              {%- endfor %}
+              </ul>
+              <ul class="list-unstyled social">
+              {%- assign ordered_social = 'facebook,youtube,google,linkedin' | split: ',' -%}
+              {%- for key in ordered_social %}
+                {% assign site_item = site.data.footer.network.sites[key] -%}
+                <li>
+                  <a href="{{ site_item.link }}" target="_blank" rel="nofollow noreferrer noopener">
+                    <span class="{{ 'icon-' | append: site_item.icon }}"></span>
+                  </a>
+                </li>
+              {%- endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-xl-row justify-content-xl-between align-items-center mt-5 text-center">
+          <div class="text-xl-start">
+            <p class="mb-0">{{ (site.time | date: '%Y') | prepend: ' ' | prepend: site.data.footer.copyright[0] | append: ' ' | append: site.data.meta.title | append: '. ' | append: site.data.footer.copyright[1] }}</p>
+          </div>
+          <div class="text-center">
+            <p class="mb-0">{{ site.data.footer.policy }}</p>
+          </div>
+          <div class="text-xl-end">
+            <p class="mb-0">{{ site.data.footer.credits }}</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+{%- endif -%}

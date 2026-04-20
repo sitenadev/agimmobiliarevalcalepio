@@ -1,0 +1,32 @@
+{
+  "title": "Affidati a noi per trovare la casa perfetta per te!",
+  "copy": "Abbiamo più di 25 anni di esperienza nel settore della compravendita immobiliare, residenziale e commerciale.",
+  "highlights": [
+    {
+      "title": "Mission",
+      "copy": "Integrità, professionalità e trasparenza sono i nostri valori. Ci aggiorniamo di continuo e accogliamo il cliente come in famiglia.",
+      "icon": "home"
+    },
+    {
+      "title": "Location",
+      "copy": "Siamo operativi nell’area compresa tra Bergamo e Brescia, basso lago d’Iseo, Franciacorta e Valcalepio.",
+      "icon": "globe"
+    },
+    {
+      "title": "Team",
+      "copy": "L’attività è guidata da Sergio Manenti, agente immobiliare Fiaip dal 1997, con una equipe esterna per un servizio completo.",
+      "icon": "person_pin"
+    }
+  ],
+  "cards": [
+    "Lago d’Iseo",
+    "Sarnico e Valcalepio",
+    "Franciacorta"
+  ],
+  "counters": [
+    { "label": "anni di esperienza", "value": 25 },
+    { "label": "esclusive su nuove costruzioni", "value": 55 },
+    { "label": "proprietà vendute", "value": 1500 },
+    { "label": "acquisizioni di mandati", "value": 2500 }
+  ]
+}

@@ -1,0 +1,15 @@
+lang: "it"
+url: "https://agenziavalcalepio.bg.it/"
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+theme: null
+
+exclude:
+  - "fonts.list"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "gulpfile.js"
+  - "package-lock.json"
+  - "package.json"
+  - "README.md"

@@ -1,0 +1,74 @@
+{
+  "contact": {
+    "title": "Contatti",
+    "address": "Via Provinciale Valle Calepio 34, Castelli Calepio (BG)",
+    "phone": {
+      "land": "0354425438",
+      "mobile": "3495265122"
+    },
+    "email": "info@agenziavalcalepio.it",
+    "pec": "agenziavalcalepiosrl@legalmail.it",
+    "openings": [
+      "Lun 14:00–19:30",
+      "Mar–Ven 08:30–12:30 14:00–19:30",
+      "Sab 08:30–12:30"
+    ]
+  },
+  "coverage": {
+    "title": "Aree",
+    "towns": [
+      "Adrara S. Martino",
+      "Adrara S. Rocco",
+      "Bergamo",
+      "Bolgare",
+      "Capriolo",
+      "Castelli Calepio",
+      "Erbusco",
+      "Gandosso",
+      "Grumello d/M",
+      "Lovere",
+      "Palazzolo s/O",
+      "Paratico",
+      "Predore",
+      "Sarnico",
+      "Telgate",
+      "Villongo"
+    ]
+  },
+  "network": {
+    "title": "Collegamenti",
+    "sites": {
+      "facebook": {
+        "name": "Facebook",
+        "link": "https://facebook.com/Agenzia-immobiliare-Valcalepio-551357054962575",
+        "icon": "facebook"
+      },
+      "google": {
+        "name": "Google",
+        "link": "https://g.page/agenzia-immobiliare-valcalepio?share",
+        "icon": "google"
+      },
+      "linkedin": {
+        "name": "LinkedIn",
+        "link": "https://linkedin.com/in/sergio-andrea-manenti-056a42119",
+        "icon": "linkedin"
+      },
+      "mlsagentre": {
+        "name": "MlsAgentRE",
+        "link": "https://mlsagentre.it/sito/43461"
+      },
+      "website": {
+        "name": "Sito principale",
+        "link": "https://agenziavalcalepio.it"
+      },
+      "youtube": {
+        "name": "YouTube",
+        "link": "https://youtube.com/@immobiliarevalcalepio",
+        "icon": "youtube"
+      }
+    }
+  },
+  "copyright": ["Copyright ©", "Tutti i diritti riservati."],
+  "policy": "<a href=\"https://www.iubenda.com/privacy-policy/62197139\" class=\"iubenda-nostyle iubenda-noiframe iubenda-embed\" title=\"Privacy Policy\">Privacy Policy</a>",
+  "credits": "Realizzato da <a href=\"https://raffaellarinaldi.bs.it\" target=\"_blank\" rel=\"nofollow noreferrer noopener\">Raffaella Rinaldi</a> & <a href=\"https://untree.co/\" target=\"_blank\" rel=\"nofollow noreferrer noopener\">Untree</a>"
+}

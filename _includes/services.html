@@ -1,0 +1,51 @@
+{%- if site.data.services -%}
+  <div id="services" class="section sec-testimonials">
+    <div class="container">
+      <div class="row mb-5 align-items-center">
+        <div class="col-md-6">
+          <h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">{{ site.data.services.title }}</h2>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div id="testimonial-nav">
+            <span class="prev" data-controls="prev">{{ site.data.services.pagination.prev }}</span>
+            <span class="next" data-controls="next">{{ site.data.services.pagination.next }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4"></div>
+      </div>
+      <div class="testimonial-slider-wrap">
+        <div class="testimonial-slider">
+        {%- for service in site.data.services.items %}
+          <div class="item">
+            <div class="testimonial">
+              <img class="img-fluid mb-4" src="{{ '/assets/img/services/service-' | append: forloop.index | append: '.jpg' | relative_url }}" alt="{{ service.title }}">
+              <h3 class="h5 text-primary">{{ service.title }}</h3>
+              <h4 class="h6 text-black mb-4">{{ service.subtitle }}</h4>
+              <blockquote>
+                <p>{{ service.copy }}</p>
+              </blockquote>
+            </div>
+          </div>
+        {%- endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="features-1 bg-light">
+    <div class="container">
+      <div class="row">
+      {%- for feature in site.data.services.features %}
+        <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 100 | plus: 300 }}">
+          <div class="box-feature">
+            <span class="{{ 'flaticon-' | append: feature.icon | append: ' mb-4' }}"></span>
+            <h3 class="mb-3">{{ feature.title1 }}</h3>
+            <h3 class="mb-3">{{ feature.title2 }}</h3>
+          </div>
+        </div>
+      {%- endfor %}
+      </div>
+    </div>
+  </section>
+{%- endif -%}

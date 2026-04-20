@@ -1,0 +1,43 @@
+{%- if site -%}
+{%- assign css_ext = '.css' -%}
+{%- assign js_ext = '.js' -%}
+{%- if jekyll.environment == 'production' -%}
+  {%- assign css_ext = '.min.css' -%}
+  {%- assign js_ext = '.min.js' -%}
+{%- endif -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  <title>{{ page.title | default: site.data.meta.title }}</title>
+  <meta charset="{{ site.data.meta.charset }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.description | default: site.data.meta.description }}">
+  <meta name="generator" content="{{ 'Jekyll ' | append: jekyll.version }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/icons' | append: css_ext | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/tiny-slider.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/aos.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/leaflet.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/styles' | append: css_ext | relative_url }}">
+</head>
+<body>
+  {% include navigation.html %}
+  {% include hero.html %}
+  {% include properties.html %}
+  {% include about.html %}
+  {% include services.html %}
+  {% include footer.html %}
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/tiny-slider.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/aos.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/leaflet.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/scripts' | append: js_ext | relative_url }}"></script>
+</body>
+</html>
+{%- endif -%}

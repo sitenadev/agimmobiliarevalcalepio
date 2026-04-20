@@ -1,0 +1,45 @@
+{
+  "title": "I nostri servizi",
+  "pagination": {
+    "prev": "Precedente",
+    "next": "Successivo"
+  },
+  "items": [
+    {
+      "title": "Valutazioni gratuite",
+      "subtitle": "Vuoi vendere il tuo immobile?",
+      "copy": "Grazie al sistema “Agent-pricing”, sempre aggiornato ai valori di mercato, ti offriamo gratuitamente il documento di stima del tuo immobile."
+    },
+    {
+      "title": "Intermediazione immobiliare",
+      "subtitle": "Affida a noi il lavoro e rilassati!",
+      "copy": "Siamo al tuo fianco nella ricerca dei cliente ideale, con l’obiettivo di creare un sereno clima di trattativa e ottenere un proficuo accordo venditore-acquirente."
+    },
+    {
+      "title": "Documenti",
+      "subtitle": "Troppe carte da presentare?",
+      "copy": "Nostro compito è assisterti dalla stipula del contratto Preliminare all’Atto Notarile, con accesso agli Atti e ricerca di tutta la documentazione necessaria."
+    },
+    {
+      "title": "Marketing digitale",
+      "subtitle": "Vuoi il tuo annuncio sul web?",
+      "copy": "Valorizziamo al massimo il tuo immobile in vendita, con servizi fotografici professionali, Render, Home Staging, Video e Pubblicità sui siti nazionali Idealista.it e Casa.it."
+    },
+    {
+      "title": "Collaborazioni esterne",
+      "subtitle": "Insieme per una consulenza su misura",
+      "copy": "Il nostro team si avvale di professionisti quali architetti, notai, fotografi, interior designer, avvocati e broker pronti a risolvere qualsiasi problematica."
+    },
+    {
+      "title": "Property finder",
+      "subtitle": "Cerchi una casa particolare?",
+      "copy": "Siamo pronti a fare una ricerca attiva dell’immobile perfetto per te, grazie al sistema di collaborazione “MLS Agent RE” che unisce una rete di agenzie in tutta Italia."
+    }
+  ],
+  "features": [
+    { "title1": "Stime immobiliari", "title2": "Certificato energetico APE", "icon": "house" },
+    { "title1": "Preliminare di compravendita", "title2": "Atto notarile", "icon": "house-1" },
+    { "title1": "Consulenza mutui", "title2": "Bonus ristrutturazioni", "icon": "house-3" },
+    { "title1": "Contratti di locazione", "title2": "Volture utenze", "icon": "building" }
+  ]
+}

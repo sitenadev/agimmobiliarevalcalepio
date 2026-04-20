@@ -1,0 +1,13 @@
+{
+  "name": "agimmobiliarevalcalepio",
+  "version": "3.1.0",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf ./assets/css ./assets/js ./.jekyll-cache .jekyll-metadata ./_sass/vendor ./_site",
+    "gulp:watch": "NODE_PATH=../gulp/node_modules gulp watch-only",
+    "jekyll:serve": "bundle exec jekyll serve --host 0.0.0.0 --port 8080 --watch",
+    "serve": "NODE_PATH=../gulp/node_modules JEKYLL_ENV=development gulp && npm-run-all --parallel jekyll:serve gulp:watch",
+    "build:assets": "NODE_PATH=../gulp/node_modules JEKYLL_ENV=production gulp",
+    "build": "bundle exec jekyll build"
+  }
+}

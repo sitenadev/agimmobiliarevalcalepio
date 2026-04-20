@@ -1,0 +1,64 @@
+{%- if site.data.properties -%}
+  <div id="properties" class="section">
+    <div class="container">
+      <div class="row mb-5 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="font-weight-bold text-primary heading">{{ site.data.properties.title }}</h2>
+        </div>
+        <div class="col-lg-6 text-lg-end">
+          <p>
+            <a class="btn btn-primary text-white py-3 px-4" href="{{ site.data.properties.more.link }}" target="_blank">{{ site.data.properties.more.label }}</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+        {%- assign properties_body = site.data.properties-api | slice: 0, 9 -%}
+        {%- if properties_body.size > 0 %}
+          <div class="property-slider-wrap">
+            <div class="property-slider">
+            {%- for property in properties_body %}
+              {%- if property.url and property.title and property.image and property.city %}
+              <div class="property-item">
+                <a class="img" href="{{ property.url }}" target="_blank">
+                  <img class="img-fluid" src="{{ property.image }}" alt="{{ property.title }}">
+                </a>
+                <div class="property-content">
+                  <div class="price mb-2">
+                    <span>{{ property.price }}</span>
+                  </div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">{{ property.title | append: ' ' | append: property.sqm }}</span>
+                    <span class="city d-block mb-3">{{ property.city }}</span>
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">{{ property.bed }}</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">{{ property.bath }}</span>
+                      </span>
+                    </div>
+                    <a class="btn btn-primary py-2 px-3" href="{{ property.url }}" target="_blank">{{ site.data.properties.action }}</a>
+                  </div>
+                </div>
+              </div>
+              {%- endif %}
+            {%- endfor %}
+            </div>
+            <div id="property-nav" class="controls" tabindex="0" aria-label="{{ site.data.properties.aria.label }}">
+              <span class="prev" data-controls="prev" aria-controls="property" tabindex="-1">{{ site.data.properties.pagination.prev }}</span>
+              <span class="next" data-controls="next" aria-controls="property" tabindex="-1">{{ site.data.properties.pagination.next }}</span>
+            </div>
+          </div>
+          {%- else %}
+          <div class="alert alert-warning text-center w-50 mx-auto">
+            <p class="mb-0">{{ site.data.properties.messages.error }}</p>
+          </div>
+          {%- endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

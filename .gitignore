@@ -1,0 +1,9 @@
+.DS_Store
+.env
+_data/properties-api.json
+_sass/vendor/
+_site/
+Gemfile
+Gemfile.lock
+node_modules/
+package-lock.json

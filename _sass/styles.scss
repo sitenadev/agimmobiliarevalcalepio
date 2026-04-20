@@ -1,0 +1,125 @@
+/*
+* Template Name: Property
+* Template Author: Untree.co
+* Template License: https://creativecommons.org/licenses/by/3.0/
+* Template Version: 1.0
+* Author URI: https://untree.co/
+* Twitter: https://twitter.com/Untree_co
+* Facebook: https://web.facebook.com/Untree.co/
+* Plus library from: https://bootstrap-menu.com/detail-fixed-onscroll.html
+*/
+
+$primary: #790A1A; //#00204A
+$secondary: #9F1C3B; //#005555
+$light: #FBF7F5; //#F8F9FA
+$color-overlay-dark: #1A0A0A; //#222
+$color-section-dark: #2A1010; //#333
+$color-icon-bg: #EEE8E3; //#F5EDE8; //#EFEFEF
+$color-footer-bg: $color-icon-bg;
+$color-footer-text: #8A6866; //#888
+$color-footer-link: #7A5C5A; //#777
+$color-social-bg: #D4C4C0; //#CCC
+$color-loader: $primary;
+$color-link-muted: #B89490; //#AFAFAF
+$color-meta: $color-footer-text;
+$color-agent-border: $color-icon-bg;
+$font-family-sans-serif: 'Work Sans', sans-serif;
+$font-family-sans-serif-secondary: 'Work Sans', sans-serif;
+
+@import
+'./vendor/google/fonts',
+'./vendor/bootstrap/mixins',
+'./vendor/bootstrap/functions',
+'./vendor/bootstrap/variables',
+'./vendor/bootstrap/bootstrap',
+'./modules/site-navbar',
+'./modules/site-base',
+'./modules/site-blocks',
+'./modules/site-footer';
+
+.loader {
+	color: $color-loader;
+}
+
+#navbar-custom {
+  background: $color-footer-bg;
+}
+
+.menu-bg-wrap {
+  background-color: $primary; //$secondary
+}
+
+.hero {
+  background-position: center center;
+}
+
+.hero-slide {
+  .img {
+    &.overlay {
+      &:before {
+        background: rgba($color-overlay-dark, .4);
+      }
+    }
+  }
+}
+
+.bg-image {
+  &.overlay {
+    &:before {
+      background: rgba($color-overlay-dark, .97);
+    }
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(270deg, $secondary 0%, $primary 100%); //linear-gradient(270deg, rgba(248,42,126,1) 0%, rgba(117,42,144,1) 100%)
+}
+
+.section-2 {
+  background-color: $color-section-dark;
+}
+
+.feature-h {
+  .wrap-icon {
+    background: $color-icon-bg;
+  }
+}
+
+.img-about {
+	&.dots {
+		&::after {
+			background: url('../img/theme/dots.png') no-repeat;
+		}
+	}
+}
+
+.links-arrow-before {
+  li {
+    a {
+      color: $color-link-muted;
+    }
+  }
+}
+
+.meta {
+  color: $color-meta;
+}
+
+.agent-box {
+  border: 2px solid $color-agent-border;
+}
+
+.site-footer {
+  background: $color-footer-bg;
+  color: $color-footer-text;
+	a {
+		color: $color-footer-link;
+	}
+	.social {
+		li {
+			a {
+				background: $color-social-bg;
+			}
+		}
+	}	
+}
